@@ -1,0 +1,27 @@
+// server.js
+const http = require('http');
+
+const htmlContent = `
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homework 1</title>
+    </head>
+    <body>
+        <p>
+            I did my homework!
+        </p>
+        <img src="Lab1.jpg">
+    </body>
+</html>
+`;
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.end(htmlContent);
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}/`);
+});
